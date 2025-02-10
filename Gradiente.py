@@ -30,8 +30,8 @@ def stochastic_gradient_descent(learning_rate, n_iterations, initial_guess, batc
     history = [x]
     for _ in range(n_iterations):
         # Seleccionar un batch aleatorio de tamaño 1 (mini-batch)
-        x_batch = np.random.uniform(-10, 10, batch_size)  # Cambiar el rango si es necesario
-        grad_batch = np.mean([df(xi) for xi in x_batch])  # Promedio del gradiente
+        x_batch = np.random.uniform(-10, 10, batch_size)
+        grad_batch = np.mean([df(xi) for xi in x_batch])
         x = x - learning_rate * grad_batch
         history.append(x)
     return np.array(history)
@@ -39,7 +39,7 @@ def stochastic_gradient_descent(learning_rate, n_iterations, initial_guess, batc
 # Parámetros
 learning_rate = 0.001
 n_iterations = 100
-initial_guess = 0  # Puedes cambiar el valor inicial
+initial_guess = 0
 
 # Ejecutar los algoritmos
 gd_history = gradient_descent(learning_rate, n_iterations, initial_guess)
